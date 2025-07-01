@@ -3,45 +3,44 @@ package com.example.jetpack_compose_practice
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.data_in_android_practice.NavRoute
+import com.example.data_in_android_practice.NavRouteGallery
+import com.example.jetpack_compose_practice.animation.AnimationsHomeScreen
+import com.example.jetpack_compose_practice.animation.ValueBasedAnimations
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
             Jetpack_Compose_PracticeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
+                val navCon = rememberNavController()
+
+                val navRouteList = listOf(
+                    NavRoute("Animations", "AnimationsHomeScreen")
+                )
+
+                NavHost (navController = navCon, startDestination = "NavRouteGallery") {
+                    composable("NavRouteGallery") {
+                        NavRouteGallery(navRouteList, navCon)
+                    }
+
+                    // Animations composable routes.
+                    composable("AnimationsHomeScreen") {
+                        AnimationsHomeScreen(navCon)
+                    }
+                    composable("ValueBasedAnimations") {
+                        ValueBasedAnimations()
+                    }
+
                 }
+
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Jetpack_Compose_PracticeTheme {
-        Greeting("Android")
-    }
-}

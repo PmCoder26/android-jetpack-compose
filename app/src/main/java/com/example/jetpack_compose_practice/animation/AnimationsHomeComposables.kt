@@ -18,7 +18,8 @@ fun AnimationsHomeScreenPreview() {
 fun AnimationsHomeScreen(navCon: NavHostController) {
 
     val navRouteList = listOf(
-        NavRoute("ValueBased Animations", "ValueBasedAnimations")
+        NavRoute("ValueBased Animations", "ValueBasedAnimations"),
+        NavRoute("Animated Content", "AnimatedContentScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

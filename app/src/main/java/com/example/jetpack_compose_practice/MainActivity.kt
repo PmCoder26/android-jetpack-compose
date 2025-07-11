@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.data_in_android_practice.NavRoute
 import com.example.data_in_android_practice.NavRouteGallery
+import com.example.jetpack_compose_practice.animation.AnimatedContentScreen
 import com.example.jetpack_compose_practice.animation.AnimationsHomeScreen
 import com.example.jetpack_compose_practice.animation.ValueBasedAnimations
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
@@ -35,6 +36,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("ValueBasedAnimations") {
                         ValueBasedAnimations()
+                    }
+                    composable("AnimatedContentScreen") {
+                        AnimatedContentScreen()
                     }
 
                 }

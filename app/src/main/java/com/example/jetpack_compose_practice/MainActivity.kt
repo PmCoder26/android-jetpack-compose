@@ -11,6 +11,8 @@ import com.example.data_in_android_practice.NavRouteGallery
 import com.example.jetpack_compose_practice.animation.AnimatedContentScreen
 import com.example.jetpack_compose_practice.animation.AnimationsHomeScreen
 import com.example.jetpack_compose_practice.animation.ValueBasedAnimations
+import com.example.jetpack_compose_practice.component.ComponentsHomeScreen
+import com.example.jetpack_compose_practice.component.TopBarScreen
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +24,8 @@ class MainActivity : ComponentActivity() {
                 val navCon = rememberNavController()
 
                 val navRouteList = listOf(
-                    NavRoute("Animations", "AnimationsHomeScreen")
+                    NavRoute("Animations", "AnimationsHomeScreen"),
+                    NavRoute("Components", "ComponentsHomeScreen"),
                 )
 
                 NavHost (navController = navCon, startDestination = "NavRouteGallery") {
@@ -39,6 +42,14 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("AnimatedContentScreen") {
                         AnimatedContentScreen()
+                    }
+
+                    // Jetpack compose components.
+                    composable("ComponentsHomeScreen") {
+                        ComponentsHomeScreen(navCon)
+                    }
+                    composable("TopBarScreen") {
+                        TopBarScreen(navCon)
                     }
 
                 }

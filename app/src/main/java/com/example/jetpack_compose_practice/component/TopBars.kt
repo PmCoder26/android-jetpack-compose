@@ -143,7 +143,6 @@ fun TopBarScreen(navCon: NavHostController) {
     ) {  innerPadding ->
         LazyColumn(
             modifier = Modifier
-                .nestedScroll(scrollBehavior.nestedScrollConnection)
                 .fillMaxSize()
                 .padding(innerPadding),
             verticalArrangement = Arrangement.Center,

@@ -37,17 +37,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 
 
-@Preview(showBackground = true)
-@Composable
-fun TopBarScreenPreview() {
-    TopBarScreen(rememberNavController())
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TopBarScreen(navCon: NavHostController) {
-
-    /*
+/*
             A. Scroll behavior of topBar:
                 1. pinnedScrollBehavior() - App bar stays fixed during scroll
                 2. enterAlwaysScrollBehavior() - App bar hides on scroll down, reappears on scroll up
@@ -76,20 +66,30 @@ fun TopBarScreen(navCon: NavHostController) {
 
      */
 
-    /*
-        We pass rememberTopAppBarState() to the scroll behavior to persist and track the app bar’s
-        scroll-related state—such as offset and collapse—across recompositions for smooth and
-        consistent UI behavior.
-        Jetpack Compose doesn’t detect scroll state automatically because scrollBehavior is decoupled
-        from the scrollable content, and it needs a shared, explicit state (TopAppBarState) to
-        coordinate behavior between the top app bar and the scrolling content.
-     */
+/*
+    We pass rememberTopAppBarState() to the scroll behavior to persist and track the app bar’s
+    scroll-related state—such as offset and collapse—across recompositions for smooth and
+    consistent UI behavior.
+    Jetpack Compose doesn’t detect scroll state automatically because scrollBehavior is decoupled
+    from the scrollable content, and it needs a shared, explicit state (TopAppBarState) to
+    coordinate behavior between the top app bar and the scrolling content.
+ */
+
+
+@Preview(showBackground = true)
+@Composable
+fun TopBarScreenPreview() {
+    TopBarScreen(rememberNavController())
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopBarScreen(navCon: NavHostController) {
 
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(
         state = rememberTopAppBarState(),
         snapAnimationSpec = tween(durationMillis = 5000, easing = LinearOutSlowInEasing)    // animation may not work!!
     )
-
 
     Scaffold(
         modifier = Modifier

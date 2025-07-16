@@ -24,16 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 
-@Preview(showBackground = true)
-@Composable
-fun BadgesHomeScreenPreview() {
-    BadgesHomeScreen()
-}
-
-@Composable
-fun BadgesHomeScreen() {
-
-    /*
+/*
             1. Introduction:
                 Use a badge to display a small visual element to denote status or a numeric value on
                 another composable. Here are a few common scenarios where you might use a badge:
@@ -53,6 +44,16 @@ fun BadgesHomeScreen() {
                            Typically the dedicated Badge composable.
 
      */
+
+
+@Preview(showBackground = true)
+@Composable
+fun BadgesHomeScreenPreview() {
+    BadgesHomeScreen()
+}
+
+@Composable
+fun BadgesHomeScreen() {
 
     Box(
         modifier = Modifier.fillMaxSize(),

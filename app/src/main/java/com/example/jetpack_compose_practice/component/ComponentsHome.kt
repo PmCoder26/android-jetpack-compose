@@ -20,6 +20,7 @@ fun ComponentsHomeScreen(navCon: NavHostController) {
     val navRouteList = listOf(
         NavRoute("Top Bar", "TopBarScreen"),
         NavRoute("Badges", "BadgesHomeScreen"),
+        NavRoute("Carousels", "CarouselsScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

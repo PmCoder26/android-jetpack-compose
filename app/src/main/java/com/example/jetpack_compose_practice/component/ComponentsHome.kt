@@ -18,7 +18,8 @@ fun ComponentsHomeScreenPreview() {
 fun ComponentsHomeScreen(navCon: NavHostController) {
 
     val navRouteList = listOf(
-        NavRoute("Top Bar", "TopBarScreen")
+        NavRoute("Top Bar", "TopBarScreen"),
+        NavRoute("Badges", "BadgesHomeScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

@@ -14,6 +14,7 @@ import com.example.jetpack_compose_practice.animation.ValueBasedAnimations
 import com.example.jetpack_compose_practice.component.BadgesHomeScreen
 import com.example.jetpack_compose_practice.component.CarouselsScreen
 import com.example.jetpack_compose_practice.component.ComponentsHomeScreen
+import com.example.jetpack_compose_practice.component.DatePickerScreen
 import com.example.jetpack_compose_practice.component.TopBarScreen
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
 
@@ -58,6 +59,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("CarouselsScreen") {
                         CarouselsScreen()
+                    }
+                    composable("DatePickerScreen") {
+                        DatePickerScreen()
                     }
 
                 }

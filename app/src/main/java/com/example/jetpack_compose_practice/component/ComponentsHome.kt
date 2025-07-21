@@ -23,6 +23,7 @@ fun ComponentsHomeScreen(navCon: NavHostController) {
         NavRoute("Carousels", "CarouselsScreen"),
         NavRoute("Date Picker", "DatePickerScreen"),
         NavRoute("Menus", "MenusScreen"),
+        NavRoute("SnackBar", "SnackBarScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

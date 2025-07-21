@@ -16,6 +16,7 @@ import com.example.jetpack_compose_practice.component.CarouselsScreen
 import com.example.jetpack_compose_practice.component.ComponentsHomeScreen
 import com.example.jetpack_compose_practice.component.DatePickerScreen
 import com.example.jetpack_compose_practice.component.MenusScreen
+import com.example.jetpack_compose_practice.component.SnackBarScreen
 import com.example.jetpack_compose_practice.component.TopBarScreen
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
 
@@ -66,6 +67,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("MenusScreen") {
                         MenusScreen()
+                    }
+                    composable("SnackBarScreen") {
+                        SnackBarScreen()
                     }
 
                 }

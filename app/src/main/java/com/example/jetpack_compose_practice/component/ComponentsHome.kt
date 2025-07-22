@@ -24,6 +24,7 @@ fun ComponentsHomeScreen(navCon: NavHostController) {
         NavRoute("Date Picker", "DatePickerScreen"),
         NavRoute("Menus", "MenusScreen"),
         NavRoute("SnackBar", "SnackBarScreen"),
+        NavRoute("Switches", "SwitchScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

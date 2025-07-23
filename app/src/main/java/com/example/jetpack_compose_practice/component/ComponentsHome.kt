@@ -25,6 +25,7 @@ fun ComponentsHomeScreen(navCon: NavHostController) {
         NavRoute("Menus", "MenusScreen"),
         NavRoute("SnackBar", "SnackBarScreen"),
         NavRoute("Switches", "SwitchScreen"),
+        NavRoute("Tabs", "TabsScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

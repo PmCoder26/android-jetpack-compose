@@ -1,0 +1,75 @@
+1. Compose runtime with the primitive, object and mutableState working.
+
+
+        🟨 1. Primitive Type – Just a Value
+
+        val count = 0
+
+        Feature	                    Behavior
+        Stores Value	            ✅ Yes (0)
+        Updates Value               ❌ No(No Mechanism)
+        Tracks Reads	            ❌ No
+        Notifies UI	                ❌ No
+        Causes Recomposition?	    ❌ No
+        Mutable?	                ❌ Not by default unless var is used
+
+        ✅ Good for logic
+        ❌ Not reactive — UI won’t update when it changes
+
+
+        🟧 2. Normal Object – Just a Class
+
+        data class Counter(val value: Int)
+
+        val counter = Counter(0)
+
+        Feature	                    Behavior
+        Stores Value	            ✅ Yes (Counter(0))
+        Updates Value	            ✅ Yes
+        Tracks Reads	            ❌ No
+        Notifies UI	                ❌ No
+        Causes Recomposition?	    ❌ No
+        Mutable?	                ❌ (unless you use var inside or change ref)
+
+        ✅ Good for storing grouped data
+        ❌ Doesn’t work with Compose UI updates on its own
+
+
+        🟩 3. mutableStateOf() – UI-Tracked Value
+
+        var count by remember { mutableStateOf(0) }
+
+        Feature	                    Behavior
+        Stores Value	            ✅ Yes (0)
+        Updates Value	            ✅ Yes
+        Tracks Reads	            ✅ Yes (via snapshot system)
+        Notifies UI	                ✅ Yes (only the affected composables)
+        Causes Recomposition?   	✅ Yes (only what depends on it)
+        Mutable?	                ✅ Fully (and safely)
+
+        ✅ Ideal for reactive UI
+        ✅ Triggers Compose recomposition
+        ✅ Used inside remember or ViewModel
+
+
+        ✅ Summary Table
+
+        Type	            Tracks Reads?	Triggers Recomposition?	        Mutable?	                    Best Use
+        Int, String 	        ❌ No	            ❌ No	            ⚠️ Only with var	           Logic, simple values
+        Counter(0)	            ❌ No	            ❌ No	            ⚠️ Needs manual management     	  Grouped data
+        mutableStateOf()	    ✅ Yes	            ✅ Yes	                   ✅ Yes	                Compose UI updates
+
+
+        📌 Key Rule to Remember
+
+        🧠 If you want UI to respond to a value change,
+        wrap it in mutableStateOf() — Compose only tracks state that’s declared as state!
+
+
+        🎯 Mini Mnemonic:
+
+        Primitive = Dumb (just a value)
+        Object = Smart (structured, but not reactive)
+        State = Super Smart (value + reactive magic)
+
+2.

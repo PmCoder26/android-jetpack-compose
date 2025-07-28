@@ -20,6 +20,8 @@ import com.example.jetpack_compose_practice.component.SnackBarScreen
 import com.example.jetpack_compose_practice.component.SwitchScreen
 import com.example.jetpack_compose_practice.component.TabsScreen
 import com.example.jetpack_compose_practice.component.TopBarScreen
+import com.example.jetpack_compose_practice.touch_and_input.TapAndPressScreen
+import com.example.jetpack_compose_practice.touch_and_input.TouchAndInputHomeScreen
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,6 +35,7 @@ class MainActivity : ComponentActivity() {
                 val navRouteList = listOf(
                     NavRoute("Animations", "AnimationsHomeScreen"),
                     NavRoute("Components", "ComponentsHomeScreen"),
+                    NavRoute("Touch And Input", "TouchAndInputHomeScreen"),
                 )
 
                 NavHost (navController = navCon, startDestination = "NavRouteGallery") {
@@ -79,6 +82,15 @@ class MainActivity : ComponentActivity() {
                     composable("TabsScreen") {
                         TabsScreen()
                     }
+
+                    // Touch and input components.
+                    composable("TouchAndInputHomeScreen") {
+                        TouchAndInputHomeScreen(navCon)
+                    }
+                    composable("TapAndPressScreen") {
+                        TapAndPressScreen()
+                    }
+
                 }
 
             }

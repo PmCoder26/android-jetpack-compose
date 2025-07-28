@@ -50,7 +50,7 @@ fun NavRouteGallery(navRouteList: List<NavRoute>, navCon: NavHostController?) {
 @Preview(showBackground = true)
 @Composable
 fun NavRouteComponentPreview() {
-    val navRoute = NavRoute("hello ", "NavRouteGallery")
+    val navRoute = NavRoute("hellop ", "NavRouteGallery")
     NavRouteComponent(navRoute, null)
 }
 
@@ -69,10 +69,9 @@ fun NavRouteComponent(navRoute: NavRoute?, navCon: NavHostController?) {
                 text = route.text,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(15.dp)
                     .wrapContentSize(),
                 style = TextStyle(
-                    fontSize = 20.sp,
+                    fontSize = 18.sp,
                     color = Color.White,
                 )
             )

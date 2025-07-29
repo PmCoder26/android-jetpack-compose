@@ -51,7 +51,6 @@ fun ScrollableScreen() {
     ) {
         Box(
             modifier = Modifier
-
                 .size(200.dp)
                 .offset(x = (screenWidth.dp / 4), y = offset.dp)
                 .scrollable(state = scrollableState, orientation = Orientation.Vertical)

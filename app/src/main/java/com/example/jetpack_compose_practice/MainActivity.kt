@@ -20,6 +20,7 @@ import com.example.jetpack_compose_practice.component.SnackBarScreen
 import com.example.jetpack_compose_practice.component.SwitchScreen
 import com.example.jetpack_compose_practice.component.TabsScreen
 import com.example.jetpack_compose_practice.component.TopBarScreen
+import com.example.jetpack_compose_practice.touch_and_input.ScrollableScreen
 import com.example.jetpack_compose_practice.touch_and_input.TapAndPressScreen
 import com.example.jetpack_compose_practice.touch_and_input.TouchAndInputHomeScreen
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
@@ -89,6 +90,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("TapAndPressScreen") {
                         TapAndPressScreen()
+                    }
+                    composable("ScrollableScreen") {
+                        ScrollableScreen()
                     }
 
                 }

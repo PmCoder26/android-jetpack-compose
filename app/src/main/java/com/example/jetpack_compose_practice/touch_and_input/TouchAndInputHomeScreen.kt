@@ -18,7 +18,8 @@ fun TouchAndInputHomeScreenPreview() {
 fun TouchAndInputHomeScreen(navCon: NavHostController) {
 
     val navRouteList = listOf(
-        NavRoute("Tap And Press", "TapAndPressScreen")
+        NavRoute("Tap And Press", "TapAndPressScreen"),
+        NavRoute("Scrollable", "ScrollableScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

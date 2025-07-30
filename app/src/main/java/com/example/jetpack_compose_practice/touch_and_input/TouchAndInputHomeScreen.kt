@@ -21,6 +21,7 @@ fun TouchAndInputHomeScreen(navCon: NavHostController) {
         NavRoute("Tap And Press", "TapAndPressScreen"),
         NavRoute("Scrollable", "ScrollableScreen"),
         NavRoute("Draggable", "DraggableScreen"),
+        NavRoute("Transformable", "TransformableScreen"),
     )
 
     NavRouteGallery(navRouteList, navCon)

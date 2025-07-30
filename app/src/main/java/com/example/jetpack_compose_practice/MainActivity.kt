@@ -24,6 +24,7 @@ import com.example.jetpack_compose_practice.touch_and_input.DraggableScreen
 import com.example.jetpack_compose_practice.touch_and_input.ScrollableScreen
 import com.example.jetpack_compose_practice.touch_and_input.TapAndPressScreen
 import com.example.jetpack_compose_practice.touch_and_input.TouchAndInputHomeScreen
+import com.example.jetpack_compose_practice.touch_and_input.TransformableScreen
 import com.example.jetpack_compose_practice.ui.theme.Jetpack_Compose_PracticeTheme
 
 class MainActivity : ComponentActivity() {
@@ -97,6 +98,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable("DraggableScreen") {
                         DraggableScreen()
+                    }
+                    composable("TransformableScreen") {
+                        TransformableScreen()
                     }
                 }
 
